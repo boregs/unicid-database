@@ -39,4 +39,12 @@ SELECT
     email AS Email,
     date_of_birth as Nascimento,
     country as Pais
-FROM production.users
+FROM production.users;
+
+UPDATE production.users
+SET email = "kevinOliveiraLTDA@oliveira.co"
+WHERE email = "kevin.oliveira@startup.co";
+
+
+DELETE FROM production.users
+WHERE id = 4;
