@@ -37,11 +37,15 @@ INSERT INTO company.employees (name, email, department, position, salary, bank) 
 ('Tiago Luz', 'tiago.luz@email.com', 'Marketing', 'Diretor de Arte', 9000.00, 'Inter');
 
 -- "Me diga quantas vezes o departamento X aparece na tabela"
-select department, COUNT(*) 
+select department, COUNT(*)
 from company.employees
 group by department
 -- basicamente falando: "mostrando aqueles que aparecem mais que duas vezes"
 having count(*) > 2;
 
-
+select department, avg(salary)
+from company.employees
+where bank = "Inter"
+group by department
+having avg(salary) > 2000;
 
